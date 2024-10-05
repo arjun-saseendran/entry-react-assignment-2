@@ -41,7 +41,8 @@ const dispatch = useDispatch()
 
                 <td className="w-25">
                   <Button className="w-50 mx-3" variant="dark"
-                  onClick={()=> dispatch(addToCart(product),removeWishlistProduct(product))}
+                  onClick={()=> {
+                    return dispatch(addToCart(product), dispatch(removeWishlistProduct(product)))}}
                   >
                     Add to Cart
                   </Button>
