@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cartProducts: [],
-  cartCount : 0,
-  
+  cartCount: 0,
+ 
 };
 
 let no = 1;
@@ -17,12 +17,14 @@ const cartSlice = createSlice({
 
       const duplicate = state.cartProducts.find((product) => product.id === id);
       if (duplicate) {
+        
         if (!duplicate.quantity) {
           duplicate.quantity = 2;
         } else {
           duplicate.quantity += 1;
         }
-        duplicate.total = (duplicate.quantity * duplicate.price)
+        duplicate.total = duplicate.quantity * duplicate.price;
+        
       } else {
         state.cartProducts.push({
           id,
@@ -32,18 +34,11 @@ const cartSlice = createSlice({
           price,
           quantity: 1,
           no: no++,
-          total: price
+          total: price,
         });
-        state.cartCount++
-      }
-
-
-    
         
-
-    
-
-     
+        state.cartCount++;
+      }
     },
   },
 });
