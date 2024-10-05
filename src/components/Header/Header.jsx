@@ -1,13 +1,18 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import  Badge  from "react-bootstrap/Badge";
-import { Link } from "react-router-dom";
+import Badge from "react-bootstrap/Badge";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function Header() {
-  const count = useSelector(state => state.cart.cartCount)
+  const count = useSelector((state) => state.cart.cartCount);
   const wishlistCount = useSelector((state) => state.wishlist.cartCount);
+  const navigate = useNavigate();
+
+  function handleRedirect() {
+    return navigate("/cart");
+  }
   return (
     <Navbar expand="lg" style={{ background: "#000000" }}>
       <Container>
@@ -43,19 +48,12 @@ function Header() {
               Wishlist
               <Badge bg="dark">{wishlistCount}</Badge>
             </Link>
-            <Link
-              to={"/orders"}
-              className="nav-link"
-              style={{ color: "#F5F5F7" }}
-            >
-              Orders
-            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
       <div className="flex flex-column justify-content-center mx-3">
         <div className="text-white">{count}</div>
-        <div>&#128722;</div>
+        <div onClick={handleRedirect}>&#128722;</div>
       </div>
     </Navbar>
   );
