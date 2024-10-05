@@ -53,7 +53,7 @@ function Header() {
       </Container>
       <div className="flex flex-column justify-content-center mx-3">
         <div className="text-white">{count}</div>
-        <div onClick={handleRedirect}>&#128722;</div>
+        <div onClick={handleRedirect} style={{cursor: 'pointer'}}>&#128722;</div>
       </div>
     </Navbar>
   );
