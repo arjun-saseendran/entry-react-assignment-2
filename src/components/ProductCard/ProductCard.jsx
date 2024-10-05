@@ -8,6 +8,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart/cartSlice";
 import { Link } from "react-router-dom";
+import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 
 function ProductCard() {
   const dispatch = useDispatch();
@@ -52,7 +53,7 @@ function ProductCard() {
                   Add to cart
                 </Button>
                 <Link to={'/wishlist'}>
-                  <Button variant="dark">Add to wishlist</Button>
+                  <Button variant="dark" onClick={()=> useDispatch(addToWishlist(product))}>Add to wishlist</Button>
                 </Link>
               </Card.Body>
             </Card>

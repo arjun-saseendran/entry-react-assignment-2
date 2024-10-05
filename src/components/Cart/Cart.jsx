@@ -1,13 +1,17 @@
 import { Badge, Container } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement, cartTotalHandler } from "../../features/cart/cartSlice";
+import {
+  increment,
+  decrement,
+  cartTotalHandler,
+} from "../../features/cart/cartSlice";
 
 function Cart() {
   const cartProducts = useSelector((state) => state.cart.cartProducts);
   const dispatch = useDispatch();
   const cartTotal = useSelector((state) => state.cart.cartTotal);
-  dispatch(cartTotalHandler())
+  dispatch(cartTotalHandler());
 
   return (
     <>
