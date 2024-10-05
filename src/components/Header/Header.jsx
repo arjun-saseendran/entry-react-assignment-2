@@ -14,24 +14,44 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link to={'/'} className="nav-link" style={{ color: "#F5F5F7" }}>
+            <Link to={"/"} className="nav-link" style={{ color: "#F5F5F7" }}>
               Home
             </Link>
-            <Link to={'/account'} className="nav-link" style={{ color: "#F5F5F7" }}>
+            <Link
+              to={"/account"}
+              className="nav-link"
+              style={{ color: "#F5F5F7" }}
+            >
               Account
             </Link>
-            <Link to={'/cart'} className="nav-link" style={{ color: "#F5F5F7" }}>
+            <Link
+              to={"/cart"}
+              className="nav-link"
+              style={{ color: "#F5F5F7" }}
+            >
               Cart
             </Link>
-            <Link to={'/wishlist'} className="nav-link" style={{ color: "#F5F5F7" }}>
+            <Link
+              to={"/wishlist"}
+              className="nav-link"
+              style={{ color: "#F5F5F7" }}
+            >
               Wishlist
             </Link>
-            <Link to={'/orders'} className="nav-link" style={{ color: "#F5F5F7" }}>
+            <Link
+              to={"/orders"}
+              className="nav-link"
+              style={{ color: "#F5F5F7" }}
+            >
               Orders
             </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <div className="flex flex-column justify-content-center mx-3">
+        <div className="text-white">1</div>
+        <div>&#128722;</div>
+      </div>
     </Navbar>
   );
 }
