@@ -16,11 +16,10 @@ function Wishlist() {
               <th>Title</th>
               <th>Image</th>
               <th>Description</th>
-              <th>Quantity</th>
+
               <th>Price</th>
-              <th>Total</th>
+
               <th></th>
-              
             </tr>
           </thead>
           <tbody>
@@ -32,12 +31,16 @@ function Wishlist() {
                   <img src={product.image} height="100px" />
                 </td>
                 <td>{product.description}</td>
-                <td>{product.quantity}</td>
+
                 <td>{product.price}</td>
-                <td>{product.total}</td>
+
                 <td className="w-25">
-                  <Button className="w-50 mx-3" variant="dark">Add to Cart</Button>
-                  <Button className="w-25 px-3" variant="danger">Delete</Button>
+                  <Button className="w-50 mx-3" variant="dark">
+                    Add to Cart
+                  </Button>
+                  <Button className="w-25 px-3" variant="danger">
+                    Delete
+                  </Button>
                 </td>
               </tr>
             ))}

@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import  Badge  from "react-bootstrap/Badge";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -31,6 +32,7 @@ function Header() {
               style={{ color: "#F5F5F7" }}
             >
               Cart
+              <Badge bg="dark">{count}</Badge>
             </Link>
             <Link
               to={"/wishlist"}
