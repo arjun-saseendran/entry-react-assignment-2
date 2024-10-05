@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 function Header() {
   return (
-    <Navbar expand="lg" style={{ background: "#B7B7B7" }}>
+    <Navbar expand="lg" style={{ background: "#000000" }}>
       <Container>
         <Navbar.Brand href="#home" style={{ color: "#F5F5F7" }}>
           Shop
@@ -17,7 +17,16 @@ function Header() {
               Home
             </Nav.Link>
             <Nav.Link href="#link" style={{ color: "#F5F5F7" }}>
-              Link
+              Account
+            </Nav.Link>
+            <Nav.Link href="#link" style={{ color: "#F5F5F7" }}>
+              Cart
+            </Nav.Link>
+            <Nav.Link href="#link" style={{ color: "#F5F5F7" }}>
+              Wishlist
+            </Nav.Link>
+            <Nav.Link href="#link" style={{ color: "#F5F5F7" }}>
+              Orders
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
