@@ -16,9 +16,15 @@ function Header() {
   return (
     <Navbar expand="lg" style={{ background: "#000000" }}>
       <Container>
-        <Navbar.Brand href="#home" style={{ color: "#F5F5F7" }}>
-          Black<span>&#128722;</span>Cart
-        </Navbar.Brand>
+        <Link to={'/'} style={{textDecoration: 'none'}}>
+          <Navbar.Brand style={{ color: "#F5F5F7" }}>
+            Black
+            <span style={{ background: "#2F3645", borderRadius: "50%" }}>
+              &#128722;
+            </span>
+            Cart
+          </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
