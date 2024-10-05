@@ -7,6 +7,7 @@ import Root from '../src/routes/root.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import store from '../store.js';
 import { Provider } from 'react-redux';
+import Cart from './components/Cart/Cart.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <App />,
+        element: <Cart />,
       },
       {
         path: "/wishlist",

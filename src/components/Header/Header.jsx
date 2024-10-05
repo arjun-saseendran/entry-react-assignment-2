@@ -2,8 +2,10 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Header() {
+  const count = useSelector(state => state.cart.cartCount)
   return (
     <Navbar expand="lg" style={{ background: "#000000" }}>
       <Container>
@@ -48,7 +50,7 @@ function Header() {
         </Navbar.Collapse>
       </Container>
       <div className="flex flex-column justify-content-center mx-3">
-        <div className="text-white">1</div>
+        <div className="text-white">{count}</div>
         <div>&#128722;</div>
       </div>
     </Navbar>

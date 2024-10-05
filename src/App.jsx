@@ -1,6 +1,7 @@
 import React from 'react'
-import Header from './components/Header/Header'
+import Cart from './components/Cart/Cart'
 import ProductCard from './components/ProductCard/ProductCard'
+
 
 function App() {
   return (
