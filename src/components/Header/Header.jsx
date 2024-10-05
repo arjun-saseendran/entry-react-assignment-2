@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 function Header() {
   const count = useSelector(state => state.cart.cartCount)
+  const wishlistCount = useSelector((state) => state.wishlist.cartCount);
   return (
     <Navbar expand="lg" style={{ background: "#000000" }}>
       <Container>
@@ -40,6 +41,7 @@ function Header() {
               style={{ color: "#F5F5F7" }}
             >
               Wishlist
+              <Badge bg="dark">{wishlistCount}</Badge>
             </Link>
             <Link
               to={"/orders"}

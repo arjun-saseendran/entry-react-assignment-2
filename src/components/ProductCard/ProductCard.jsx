@@ -52,8 +52,8 @@ function ProductCard() {
                 >
                   Add to cart
                 </Button>
-                <Link to={'/wishlist'}>
-                  <Button variant="dark" onClick={()=> useDispatch(addToWishlist(product))}>Add to wishlist</Button>
+                <Link>
+                  <Button variant="dark" onClick={()=> dispatch(addToWishlist(product))}>Add to wishlist</Button>
                 </Link>
               </Card.Body>
             </Card>

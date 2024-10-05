@@ -1,9 +1,14 @@
 import { Button, Container } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../../features/cart/cartSlice";
+import { removeWishlistProduct } from "../../features/wishlist/wishlistSlice";
 
 function Wishlist() {
-  const cartProducts = useSelector((state) => state.cart.cartProducts);
+  const wishlistProducts = useSelector(
+    (state) => state.wishlist.wishlistProducts
+  );
+const dispatch = useDispatch()
 
   return (
     <>
@@ -23,7 +28,7 @@ function Wishlist() {
             </tr>
           </thead>
           <tbody>
-            {cartProducts.map((product) => (
+            {wishlistProducts.map((product) => (
               <tr key={product.id}>
                 <td>{product.no}</td>
                 <td>{product.title}</td>
@@ -35,10 +40,14 @@ function Wishlist() {
                 <td>{product.price}</td>
 
                 <td className="w-25">
-                  <Button className="w-50 mx-3" variant="dark">
+                  <Button className="w-50 mx-3" variant="dark"
+                  onClick={()=> dispatch(addToCart(product),removeWishlistProduct(product))}
+                  >
                     Add to Cart
                   </Button>
-                  <Button className="w-25 px-3" variant="danger">
+                  <Button className="w-25 px-3" variant="danger"
+                  onClick={()=> dispatch(removeWishlistProduct(product))}
+                  >
                     Delete
                   </Button>
                 </td>
