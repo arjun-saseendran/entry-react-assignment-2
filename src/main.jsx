@@ -3,9 +3,44 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css'
+import Root from '../src/routes/root.jsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import store from '../store.js';
+import { Provider } from 'react-redux';
 
-createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      {
+        path: "/",
+        element: <App />,
+      },
+      {
+        path: "/account",
+        element: <App />,
+      },
+      {
+        path: "/cart",
+        element: <App />,
+      },
+      {
+        path: "/wishlist",
+        element: <App />,
+      },
+      {
+        path: "/orders",
+        element: <App />,
+      },
+    ],
+  },
+]);
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  </StrictMode>
+);
