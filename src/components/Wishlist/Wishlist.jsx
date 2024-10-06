@@ -8,7 +8,7 @@ function Wishlist() {
   const wishlistProducts = useSelector(
     (state) => state.wishlist.wishlistProducts
   );
-const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -40,14 +40,22 @@ const dispatch = useDispatch()
                 <td>{product.price}</td>
 
                 <td className="w-25">
-                  <Button className="w-50 mx-3" variant="dark"
-                  onClick={()=> {
-                    return dispatch(addToCart(product), dispatch(removeWishlistProduct(product)))}}
+                  <Button
+                    className="w-50 mx-3"
+                    variant="dark"
+                    onClick={() => {
+                      return dispatch(
+                        addToCart(product),
+                        dispatch(removeWishlistProduct(product))
+                      );
+                    }}
                   >
                     Add to Cart
                   </Button>
-                  <Button className="w-25 px-3" variant="danger"
-                  onClick={()=> dispatch(removeWishlistProduct(product))}
+                  <Button
+                    className="w-25 px-3"
+                    variant="danger"
+                    onClick={() => dispatch(removeWishlistProduct(product))}
                   >
                     Delete
                   </Button>
