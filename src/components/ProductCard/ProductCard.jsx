@@ -16,7 +16,13 @@ function ProductCard() {
   useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products")
-      .then((res) => setProducts(res.data))
+      .then((res) => {
+        const updatedProducts = res.data.map((product) => ({
+          ...product,
+        quantity : 1
+        }));
+        setProducts(updatedProducts);
+      })
       .catch((error) => console.log(error));
   }, []);
 
@@ -53,7 +59,12 @@ function ProductCard() {
                   Add to cart
                 </Button>
                 <Link>
-                  <Button variant="dark" onClick={()=> dispatch(addToWishlist(product))}>Add to wishlist</Button>
+                  <Button
+                    variant="dark"
+                    onClick={() => dispatch(addToWishlist(product))}
+                  >
+                    Add to wishlist
+                  </Button>
                 </Link>
               </Card.Body>
             </Card>
