@@ -1,10 +1,11 @@
-import { Badge, Container } from "react-bootstrap";
+import { Badge, Container, Button } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import { useDispatch, useSelector } from "react-redux";
 import {
   increment,
   decrement,
   cartTotalHandler,
+  deleteCartProduct
 } from "../../features/cart/cartSlice";
 
 function Cart() {
@@ -27,6 +28,7 @@ function Cart() {
               <th>Quantity</th>
               <th>Price</th>
               <th>Total</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -61,6 +63,7 @@ function Cart() {
                 </td>
                 <td>{product.price}</td>
                 <td>{product.total}</td>
+                <td><Button variant="danger" className="text-white" onClick={()=> dispatch(deleteCartProduct(product))}>Delete</Button></td>
               </tr>
             ))}
           </tbody>
