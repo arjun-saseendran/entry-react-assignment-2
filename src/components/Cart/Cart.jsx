@@ -17,7 +17,7 @@ function Cart() {
   return (
     <>
       <h1 className="text-center text-white m-5">Cart</h1>
-      <Container className="m-5">
+      <Container className="m-5 vh-100">
         <Table striped bordered hover className="bg-primary">
           <thead>
             <tr>

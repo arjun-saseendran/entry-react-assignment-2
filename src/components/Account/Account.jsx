@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 
 function Login() {
   return (
-    <Container className="d-flex justify-content-center align-items-center">
+    <Container className="d-flex justify-content-center align-items-center vh-100">
       <Row className="mt-5 text-white rounded-3 p-5" style={{ background: "#000000" }}>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
