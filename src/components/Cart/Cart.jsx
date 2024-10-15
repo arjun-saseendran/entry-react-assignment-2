@@ -1,11 +1,11 @@
-import { Badge, Container, Button } from "react-bootstrap";
+import { Badge, Container, Button, Row } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import { useDispatch, useSelector } from "react-redux";
 import {
   increment,
   decrement,
   cartTotalHandler,
-  deleteCartProduct
+  deleteCartProduct,
 } from "../../features/cart/cartSlice";
 
 function Cart() {
@@ -15,10 +15,10 @@ function Cart() {
   dispatch(cartTotalHandler());
 
   return (
-    <>
-      <h1 className="text-center text-white m-5">Cart</h1>
-      <Container className="m-5 vh-100">
-        <Table striped bordered hover className="bg-primary">
+    <Container className="flex justify-content-center align-items-center vh-100">
+      <Row>
+        <h1 className="text-center text-white">Cart</h1>
+        <Table striped bordered hover className="bg-dark w-100">
           <thead>
             <tr>
               <th>No</th>
@@ -40,10 +40,9 @@ function Cart() {
                   <img src={product.image} height="100px" />
                 </td>
                 <td>{product.description}</td>
-                <td style={{ width: "120px" }}>
+                <td>
                   <Badge
                     bg="dark"
-                    className="me-1"
                     style={{ cursor: "pointer" }}
                     onClick={() => dispatch(increment(product))}
                   >
@@ -54,7 +53,6 @@ function Cart() {
 
                   <Badge
                     bg="dark"
-                    className="ms-1"
                     style={{ cursor: "pointer" }}
                     onClick={() => dispatch(decrement(product))}
                   >
@@ -63,18 +61,24 @@ function Cart() {
                 </td>
                 <td>{product.price}</td>
                 <td>{product.total}</td>
-                <td><Button variant="danger" className="text-white" onClick={()=> dispatch(deleteCartProduct(product))}>Delete</Button></td>
+                <td>
+                  <Button
+                    variant="danger"
+                    className="text-white"
+                    onClick={() => dispatch(deleteCartProduct(product))}
+                  >
+                    Delete
+                  </Button>
+                </td>
               </tr>
             ))}
           </tbody>
         </Table>
-        <div className="bg-dark w-100 p-3 text-white text-text-center">
-          <h4 className="text-end" style={{ marginRight: "10px" }}>
-            Cart Total: {cartTotal}
-          </h4>
+        <div className="bg-dark p-3 text-white text-text-center">
+          <h4 className="text-end">Cart Total: {cartTotal}</h4>
         </div>
-      </Container>
-    </>
+      </Row>
+    </Container>
   );
 }
 

@@ -1,4 +1,4 @@
-import { Button, Container } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart/cartSlice";
@@ -11,9 +11,9 @@ function Wishlist() {
   const dispatch = useDispatch();
 
   return (
-    <>
-      <h1 className="text-center text-white m-5">Wishlist</h1>
-      <Container className="m-5 vh-100">
+    <Container className="vh-100">
+      <Row>
+        <h1 className="text-center text-white">Wishlist</h1>
         <Table striped bordered hover className="bg-primary">
           <thead>
             <tr>
@@ -39,9 +39,8 @@ function Wishlist() {
 
                 <td>{product.price}</td>
 
-                <td className="w-25">
+                <td>
                   <Button
-                    className="w-50 mx-3"
                     variant="dark"
                     onClick={() => {
                       return dispatch(
@@ -53,7 +52,6 @@ function Wishlist() {
                     Add to Cart
                   </Button>
                   <Button
-                    className="w-25 px-3"
                     variant="danger"
                     onClick={() => dispatch(removeWishlistProduct(product))}
                   >
@@ -64,8 +62,8 @@ function Wishlist() {
             ))}
           </tbody>
         </Table>
-      </Container>
-    </>
+      </Row>
+    </Container>
   );
 }
 
