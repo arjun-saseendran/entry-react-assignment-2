@@ -18,7 +18,7 @@ function Cart() {
     <Container className="flex justify-content-center align-items-center vh-100">
       <Row>
         <h1 className="text-center text-white">Cart</h1>
-        <Table striped bordered hover className="bg-dark w-100">
+        <Table striped bordered hover className="bg-dark">
           <thead>
             <tr>
               <th>No</th>
